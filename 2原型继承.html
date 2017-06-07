@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //把父类私有和公有的属性和方法继承给子类公有的即=原型上，和子类私有无关
+    function F() {
+        //this--F new 的实例
+        this.x=100;
+        this.y=200;
+        this.get=function () {
+
+        }
+
+    }
+    F.prototype.set=function () {
+
+    }
+    var f=new F;
+    function S() {
+
+    }
+    S.prototype=new F;//把子类公有的作为父类的实例
+
+    var  s=new S;
+
+
+</script>
+</html>

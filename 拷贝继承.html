@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //把父类私有和公有都给了子类私有的 (核心：使用forin循环把父类实例的方法和属性遍历给子类私有)
+
+    function F() {
+        this.x=100;
+        this.y=200;
+        this.get=function () {
+
+        }
+    }
+    F.prototype.set=function () {
+
+    }
+    var f=new F;
+    function S() {
+        //for in循环只能便利自定义的属性和方法  不能拿到自带的
+        for (var attr in f){
+           this[attr]=f[attr]
+
+        }
+    }
+    var s=new S;
+     console.log(s)
+
+
+
+
+
+
+</script>
+</body>
+</html>

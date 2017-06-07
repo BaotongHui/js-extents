@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+//父类私有的属性和方法，继承给子类私有的；;和公有的无关
+//F父类  S子类
+//call 继承只能继承父类私有的属性和方法给子类私有；和公有的属性和方法无关；
+function F() {
+    //this--F new 的实例
+    this.x=100;
+    this.y=200;
+    this.get=function () {
+
+    }
+
+}
+F.prototype.set=function () {
+
+}
+var f=new F;
+function S() {
+    //this--S new 的实例
+    F.call(this)
+
+}
+
+var  s=new S;
+
+
+
+
+
+
+</script>
+
+</html>

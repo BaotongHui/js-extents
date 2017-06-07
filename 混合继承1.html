@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //call和原型继承一起
+    //子类公有和子类私有 有了父类私有的属相和方法
+    function F() {
+        this.x=100;
+        this.y=200;
+        this.get=function () {
+
+        }
+    }
+    F.prototype.set=function () {
+
+    }
+    var f=new F;
+    function S() {
+       F.call(this)
+    }
+    S.prototype=new F;
+    var s=new S;
+    console.log(s)
+</script>
+</html>

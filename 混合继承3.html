@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //call+Object.create
+
+    function F() {
+        this.x=100;
+        this.y=200;
+        this.get=function () {
+
+        }
+    }
+    F.prototype.set=function () {
+
+    }
+    var f=new F;
+    function S() {
+        F.call(this)
+    }
+    //tem 过滤作用
+    function Tem() {
+    }
+    Tem.prototype=F.prototype;
+    S.prototype=new Tem;
+    S.prototype.constructor=S;
+
+    var s=new S;
+    console.log(s)
+
+
+
+
+</script>
+
+</body>
+</html>
